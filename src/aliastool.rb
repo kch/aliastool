@@ -38,7 +38,7 @@ module Commands
 
   def usage
     h = { name: (s = File.basename($0)), fill: s.gsub(/./, ' ') }
-    puts USAGE.gsub(/\{(\w+)\}/) { h[$1] }
+    puts USAGE.gsub(/\{(\w+)\}/) { h[$1.to_sym] }
     exit 1 unless %w( -h --help help usage ).include? ARGV[0]
   end
 end
